@@ -17,13 +17,14 @@
         }
         .container {
             background-color: #1e1e1e;
-            padding: 30px;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            width: 400px;
+            width: 90%;
+            max-width: 400px;
         }
         h1 {
-            font-size: 2em;
+            font-size: 1.5em;
             text-align: center;
             margin-bottom: 20px;
         }
@@ -39,7 +40,7 @@
             border: 1px solid #555;
             border-radius: 5px;
             color: #f0f0f0;
-            font-size: 1.2em;
+            font-size: 1em;
         }
         .button {
             width: calc(100% - 24px);
@@ -51,13 +52,21 @@
             cursor: pointer;
             margin-left: 12px;
             margin-right: 12px;
-            font-size: 1.2em;
+            font-size: 1em;
         }
         .button:hover {
             background-color: #0056b3;
         }
         .output-field {
             display: none;
+        }
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            .input-field input, .select-field select, .button {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
