@@ -73,7 +73,7 @@
                     <option value="3">Multiplicar</option>
                     <option value="4">Dividir</option>
                     <option value="5">Potencia</option>
-                    <option value="6">Raíz cuadrada</option>
+                    <option value="10">Raíz</option>
                     <option value="7">Operación combinada</option>
                     <option value="8">Ordenar números de mayor a menor</option>
                     <option value="9">Ordenar números de menor a mayor</option>
@@ -131,10 +131,13 @@
                             <input type="number" id="num2" placeholder="Exponente">
                         </div>`;
                     break;
-                case '6':
+                case '10':
                     fields = `
                         <div class="input-field">
                             <input type="number" id="num1" placeholder="Número">
+                        </div>
+                        <div class="input-field">
+                            <input type="number" id="degree" placeholder="Grado">
                         </div>`;
                     break;
                 case '7':
@@ -175,8 +178,8 @@
                 case '5':
                     output = power();
                     break;
-                case '6':
-                    output = sqrt();
+                case '10':
+                    output = nRoot();
                     break;
                 case '7':
                     output = combinedOperation();
@@ -226,9 +229,11 @@
             return `El resultado de la potencia es: ${Math.pow(base, exponent)}`;
         }
 
-        function sqrt() {
+        function nRoot() {
             let num = parseFloat(document.getElementById('num1').value);
-            return `La raíz cuadrada es: ${Math.sqrt(num)}`;
+            let degree = parseFloat(document.getElementById('degree').value);
+            if (degree === 0) return 'El grado de la raíz no puede ser cero';
+            return `El resultado de la raíz es: ${Math.pow(num, 1 / degree)}`;
         }
 
         function combinedOperation() {
